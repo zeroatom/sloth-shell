@@ -8,6 +8,7 @@ SLOTH_BASE="SLOTH_BASE"
 #  初始化全局的环境变量
 SCRIPT_NAME=$(basename $0)
 SCRIPT_PATH="$(cd -P "$(dirname "$SOURCE" )" && pwd )"
+RUN_DAY=$(date +%Y%m%d)
 SOURCE="$0"
 while [ -h "$SOURCE" ];do
 	SCRIPT_PATH="$(cd -P "$(dirname "$SOURCE" )" && pwd )"
