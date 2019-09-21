@@ -68,3 +68,15 @@ function version_str() {
 
 	echo $_retstr
 }
+
+#获取当前版本
+function obtain_txt_version() {
+	if [ -f "version.txt" ]; then
+		t=`cat version.txt`
+		echo $t
+	else
+		t="1.0.0"
+		echo $t > version.txt
+		echo $t
+	fi
+}
