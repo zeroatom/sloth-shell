@@ -11,5 +11,5 @@ function cmd_test1() { #HELP 重启服务器:\nCMD test1 <a1>
 
 require "cmd"
 
-call_cmd "${@}"
+safe_call_cmd "${@}"
 

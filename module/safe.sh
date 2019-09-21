@@ -22,7 +22,7 @@ function guard_begin()
 {
 	if [ -f "$SCRIPT_LOCK_FILE" ]; then
 		log_info "${SCRIPT_NAME} is running"
-		echo "${SCRIPT_NAME} is running" && exit
+		echo "${SCRIPT_NAME} is running" && exit 1
 	fi
 	lock
 }
