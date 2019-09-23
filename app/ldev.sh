@@ -23,6 +23,13 @@ function cmd_start() { #HELP 开始特性:\nCMD start <name>
 	git checkout -b $FEATURE_NAME $CUR_BRANCH_NAME
 }
 
+function cmd_start_remote() { #HELP 开始远程特性:\nCMD start_remote <name>
+    FEATURE_NAME=$1
+	CUR_BRANCH_NAME=`obtain_git_branch`
+	git checkout -b $FEATURE_NAME $CUR_BRANCH_NAME
+	git push origin $FEATURE_NAME:$FEATURE_NAME
+}
+
 function cmd_merge() { #HELP 合并特性:\nCMD merge <name>
     FEATURE_NAME=$1
     git merge --no-ff $FEATURE_NAME
