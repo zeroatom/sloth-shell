@@ -10,6 +10,7 @@
 require "base"
 require "nodeenv"
 require "log"
+require "tip"
 
 # 安装redis
 function redis_install(){
@@ -147,15 +148,21 @@ function redis_batch_new(){
 
 # 记录 <inst_name>
 function redis_tip() {
-	die "not impl"
+    _redis_inst_path="${NODE_BASE_APP_PATH}/redis_$1"
+	_tip_file_path="$_redis_inst_path/TIP"
+	die_no_dir $_redis_inst_path "redis inst $1 no exist"
+	tip_add $_tip_file_path "$2"
+}
+
+# 获取实例的tip 
+function redis_tip_get() {
+    _redis_inst_path="${NODE_BASE_APP_PATH}/redis_$1"
+	_tip_file_path="$_redis_inst_path/TIP"
+	die_no_file $_tip_file_path "redis inst $1 no tip"
+	tip_get $_tip_file_path
 }
 
 # 显示所有redis实例
 function redis_inst_list() {
-	die "not impl"
-}
-
-# 获取实例的tip <inst_name>
-function redis_tip_get() {
 	die "not impl"
 }

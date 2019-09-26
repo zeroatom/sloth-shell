@@ -35,6 +35,14 @@ function cmd_new_redis() { #HELP 新建redis:\nCMD new_redis <port>
 	redis_new $1
 }
 
+function cmd_tip_redis() { #HELP redis提示:\nCMD tip_redis <port>
+	if [ $# -lt 2 ];then
+		redis_tip_get $1
+	else
+		_msg="${@:2}"
+		redis_tip $1 "$_msg"
+	fi
+}
 
 require "cmd"
 call_cmd "${@}"

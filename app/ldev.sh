@@ -9,12 +9,25 @@
 #================================================================
 . sloth-bootstrap.sh
 
+require "base"
 require "log"
+require "tip"
 
 # 获取分支名
 function obtain_git_branch {
 	br=`git branch | grep "*"`
 	echo ${br/* /}
+}
+
+function cmd_tip() { #HELP 记录提示:\nCMD tip
+    _tip_file_path="$RUN_PATH/TIP"
+	if [ $# -lt 1 ];then
+		tip_get $_tip_file_path
+	else
+		_msg="${@:1}"
+		tip_add $_tip_file_path "$_msg"
+	fi
+
 }
 
 function cmd_start() { #HELP 开始特性:\nCMD start <name>
