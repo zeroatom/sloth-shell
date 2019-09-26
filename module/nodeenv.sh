@@ -17,9 +17,17 @@ NODE_ENV_DIR=(
 	"global_app"
 	"tmp"
 	"repos/backups"
-	"repos/dist"
+	"repos/dist/app"
 	"repos/docs"
 
 	"etc"
 )
 
+# 基础软件路径
+NODE_BASE_APP_PATH="$NODE_ENV_ROOT_PATH/base_app"
+
+# 全局软件路径
+NODE_GLOBAL_APP_PATH="$NODE_ENV_ROOT_PATH/global_app"
+
+# 运行标志目录
+NODE_RUN_PATH="$NODE_ENV_ROOT_PATH/run"

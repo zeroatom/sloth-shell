@@ -18,6 +18,7 @@ done
 SCRIPT_PATH="$(cd -P "$(dirname "$SOURCE" )" && pwd )"
 RUN_PATH=`pwd`
 GLOBAL_CONFIG_PATH=$HOME/.sloth
+SLOTH_TPL_PATH=$HOME/bin/sloth-shell/tpl
 
 # 添加模块path
 MODULE_PATH=$HOME/bin/sloth-shell/module
